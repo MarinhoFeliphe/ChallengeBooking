@@ -1,6 +1,7 @@
 package Service;
 
 import Service.Interface.BookingService;
+import Service.Interface.HotelService;
 import Util.DataUtils;
 import model.BestHotel;
 import model.Booking;
@@ -13,17 +14,17 @@ import java.util.stream.Collectors;
 
 public class BookingServiceImpl implements BookingService {
 
+    HotelService service = new HotelServiceImpl();
+
     @Override
     public String findByHotel(TPClient tpClient, LocalDate... dates) {
-        HotelServiceImpl service = new HotelServiceImpl();
+
         List<Booking> bookingList = new ArrayList<>();
 
         Calendar calendar = Calendar.getInstance();
         List<Hotel> hotelList = service.loadHotel();
 
-        hotelList.forEach(hotel -> {
-            bookingList.add(new Booking(hotel, 0d, 0d, 0d, 0d));
-        });
+        loadBooking(bookingList, hotelList);
 
         Arrays.asList(dates).forEach(dateBooking -> {
 
@@ -46,6 +47,12 @@ public class BookingServiceImpl implements BookingService {
         });
 
         return bestHorel(bookingList);
+    }
+
+    private void loadBooking(List<Booking> bookingList, List<Hotel> hotelList) {
+        hotelList.forEach(hotel -> {
+            bookingList.add(new Booking(hotel, 0d, 0d, 0d, 0d));
+        });
     }
 
     private String bestHorel(List<Booking> bookingList) {

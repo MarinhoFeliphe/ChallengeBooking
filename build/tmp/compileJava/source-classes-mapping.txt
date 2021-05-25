@@ -2,16 +2,18 @@ model/Booking.java
  model.Booking
 Startup.java
  Startup
-model/emun/Ranks.java
- model.emun.Ranks
 model/emun/TPClient.java
  model.emun.TPClient
+model/emun/Ranks.java
+ model.emun.Ranks
+controller/BookingController.java
+ controller.BookingController
 model/BestHotel.java
  model.BestHotel
-Service/BookingServiceImpl.java
- Service.BookingServiceImpl
 Service/Interface/BookingService.java
  Service.Interface.BookingService
+Service/BookingServiceImpl.java
+ Service.BookingServiceImpl
 model/Hotel.java
  model.Hotel
 Service/HotelServiceImpl.java

@@ -1,6 +1,7 @@
 package Service;
 
 import Service.Interface.HotelService;
+import model.Booking;
 import model.Hotel;
 import model.emun.Ranks;
 
@@ -26,4 +27,5 @@ public class HotelServiceImpl implements HotelService {
 
         return hotelList;
     }
+
 }
