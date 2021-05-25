@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StartupTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-25T17:32:33" hostname="DESKTOP-AQVJT90" time="0.038">
+<testsuite name="StartupTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-05-25T17:48:13" hostname="DESKTOP-AQVJT90" time="0.023">
   <properties/>
-  <testcase name="booking1Test()" classname="StartupTest" time="0.035"/>
+  <testcase name="booking1Test()" classname="StartupTest" time="0.02"/>
   <testcase name="booking2Test()" classname="StartupTest" time="0.001"/>
   <testcase name="booking3Test()" classname="StartupTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

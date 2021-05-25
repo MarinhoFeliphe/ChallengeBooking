@@ -1,14 +1,20 @@
 import controller.BookingController;
 import model.emun.TPClient;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
 public class StartupTest {
 
-    BookingController bookingController = new BookingController();
+    private static BookingController bookingController;
     String bestBooking;
+
+    @BeforeAll
+    public static void stup() {
+        bookingController = new BookingController();
+    }
 
     @Test
     public void booking1Test() {
