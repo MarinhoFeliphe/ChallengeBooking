@@ -6,22 +6,22 @@ public class Hotel {
 
     private String name;
     private Ranks rank;
-    private Double regularWeek;
-    private Double fidelityWeek;
-    private Double regularWeekend;
-    private Double fidelityWeekend;
+    private Double priceToClientOnRegularWeekDays;
+    private Double priceToClientOnFidelityWeekDays;
+    private Double priceToClientOnRegularWeekendDays;
+    private Double priceToClientOnFidelityWeekendDays;
 
     public Hotel() {
 
     }
 
-    public Hotel(String name, Ranks rank, Double valueRegularWeek, Double valueFidelityWeek, Double valueRegularWeekend, Double valueFidelityWeekend) {
+    public Hotel(String name, Ranks rank, Double priceToClientOnRegularWeekDays, Double priceToClientOnFidelityWeekDays, Double priceToClientOnRegularWeekendDays, Double priceToClientOnFidelityWeekendDays) {
         this.name = name;
         this.rank = rank;
-        this.regularWeek = valueRegularWeek;
-        this.fidelityWeek = valueFidelityWeek;
-        this.regularWeekend = valueRegularWeekend;
-        this.fidelityWeekend = valueFidelityWeekend;
+        this.priceToClientOnRegularWeekDays = priceToClientOnRegularWeekDays;
+        this.priceToClientOnFidelityWeekDays = priceToClientOnFidelityWeekDays;
+        this.priceToClientOnRegularWeekendDays = priceToClientOnRegularWeekendDays;
+        this.priceToClientOnFidelityWeekendDays = priceToClientOnFidelityWeekendDays;
     }
 
     public String getName() {
@@ -40,36 +40,36 @@ public class Hotel {
         this.rank = rank;
     }
 
-    public Double getRegularWeek() {
-        return regularWeek;
+    public Double getPriceToClientOnRegularWeekDays() {
+        return priceToClientOnRegularWeekDays;
     }
 
-    public void setRegularWeek(Double regularWeek) {
-        this.regularWeek = regularWeek;
+    public void setPriceToClientOnRegularWeekDays(Double priceToClientOnRegularWeekDays) {
+        this.priceToClientOnRegularWeekDays = priceToClientOnRegularWeekDays;
     }
 
-    public Double getFidelityWeek() {
-        return fidelityWeek;
+    public Double getPriceToClientOnFidelityWeekDays() {
+        return priceToClientOnFidelityWeekDays;
     }
 
-    public void setFidelityWeek(Double fidelityWeek) {
-        this.fidelityWeek = fidelityWeek;
+    public void setPriceToClientOnFidelityWeekDays(Double priceToClientOnFidelityWeekDays) {
+        this.priceToClientOnFidelityWeekDays = priceToClientOnFidelityWeekDays;
     }
 
-    public Double getRegularWeekend() {
-        return regularWeekend;
+    public Double getPriceToClientOnRegularWeekendDays() {
+        return priceToClientOnRegularWeekendDays;
     }
 
-    public void setRegularWeekend(Double regularWeekend) {
-        this.regularWeekend = regularWeekend;
+    public void setPriceToClientOnRegularWeekendDays(Double priceToClientOnRegularWeekendDays) {
+        this.priceToClientOnRegularWeekendDays = priceToClientOnRegularWeekendDays;
     }
 
-    public Double getFidelityWeekend() {
-        return fidelityWeekend;
+    public Double getPriceToClientOnFidelityWeekendDays() {
+        return priceToClientOnFidelityWeekendDays;
     }
 
-    public void setFidelityWeekend(Double fidelityWeekend) {
-        this.fidelityWeekend = fidelityWeekend;
+    public void setPriceToClientOnFidelityWeekendDays(Double priceToClientOnFidelityWeekendDays) {
+        this.priceToClientOnFidelityWeekendDays = priceToClientOnFidelityWeekendDays;
     }
 
     @Override
@@ -77,10 +77,10 @@ public class Hotel {
         return "Hotel{" +
                 "name='" + name + '\'' +
                 ", rank=" + rank +
-                ", regularWeek=" + regularWeek +
-                ", fidelityWeek=" + fidelityWeek +
-                ", regularWeekend=" + regularWeekend +
-                ", fidelityWeekend=" + fidelityWeekend +
+                ", priceToClientOnRegularWeekDays=" + priceToClientOnRegularWeekDays +
+                ", priceToClientOnFidelityWeekDays=" + priceToClientOnFidelityWeekDays +
+                ", priceToClientOnRegularWeekendDays=" + priceToClientOnRegularWeekendDays +
+                ", priceToClientOnFidelityWeekendDays=" + priceToClientOnFidelityWeekendDays +
                 '}';
     }
 }

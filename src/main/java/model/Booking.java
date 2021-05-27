@@ -3,17 +3,17 @@ package model;
 public class Booking {
 
     private Hotel hotel;
-    private Double sumRegularWeek;
-    private Double sumFidelityWeek;
-    private Double sumRegularWeekend;
-    private Double sumFidelityWeekend;
+    private Double totalPriceToRegularClientOnWeekDays;
+    private Double totalPriceToFidelityClientOnyWeekDays;
+    private Double totalPriceToRegularClientOnWeekendDays;
+    private Double totalPriceToFidelityClientOnWeekendDays;
 
-    public Booking(Hotel hotel, Double sumRegularWeek, Double sumFidelityWeek, Double sumRegularWeekend, Double sumFidelityWeekend) {
+    public Booking(Hotel hotel, Double totalPriceToRegularClientOnWeekDays, Double totalPriceToFidelityClientOnyWeekDays, Double totalPriceToRegularClientOnWeekendDays, Double totalPriceToFidelityClientOnWeekendDays) {
         this.hotel = hotel;
-        this.sumRegularWeek = sumRegularWeek;
-        this.sumFidelityWeek = sumFidelityWeek;
-        this.sumRegularWeekend = sumRegularWeekend;
-        this.sumFidelityWeekend = sumFidelityWeekend;
+        this.totalPriceToRegularClientOnWeekDays = totalPriceToRegularClientOnWeekDays;
+        this.totalPriceToFidelityClientOnyWeekDays = totalPriceToFidelityClientOnyWeekDays;
+        this.totalPriceToRegularClientOnWeekendDays = totalPriceToRegularClientOnWeekendDays;
+        this.totalPriceToFidelityClientOnWeekendDays = totalPriceToFidelityClientOnWeekendDays;
     }
 
     public Hotel getHotel() {
@@ -24,46 +24,46 @@ public class Booking {
         this.hotel = hotel;
     }
 
-    public Double getSumRegularWeek() {
-        return sumRegularWeek;
+    public Double getTotalPriceToRegularClientOnWeekDays() {
+        return totalPriceToRegularClientOnWeekDays;
     }
 
-    public void setSumRegularWeek(Double sumRegularWeek) {
-        this.sumRegularWeek = sumRegularWeek;
+    public void setTotalPriceToRegularClientOnWeekDays(Double totalPriceToRegularClientOnWeekDays) {
+        this.totalPriceToRegularClientOnWeekDays = totalPriceToRegularClientOnWeekDays;
     }
 
-    public Double getSumFidelityWeek() {
-        return sumFidelityWeek;
+    public Double getTotalPriceToFidelityClientOnyWeekDays() {
+        return totalPriceToFidelityClientOnyWeekDays;
     }
 
-    public void setSumFidelityWeek(Double sumFidelityWeek) {
-        this.sumFidelityWeek = sumFidelityWeek;
+    public void setTotalPriceToFidelityClientOnyWeekDays(Double totalPriceToFidelityClientOnyWeekDays) {
+        this.totalPriceToFidelityClientOnyWeekDays = totalPriceToFidelityClientOnyWeekDays;
     }
 
-    public Double getSumRegularWeekend() {
-        return sumRegularWeekend;
+    public Double getTotalPriceToRegularClientOnWeekendDays() {
+        return totalPriceToRegularClientOnWeekendDays;
     }
 
-    public void setSumRegularWeekend(Double sumRegularWeekend) {
-        this.sumRegularWeekend = sumRegularWeekend;
+    public void setTotalPriceToRegularClientOnWeekendDays(Double totalPriceToRegularClientOnWeekendDays) {
+        this.totalPriceToRegularClientOnWeekendDays = totalPriceToRegularClientOnWeekendDays;
     }
 
-    public Double getSumFidelityWeekend() {
-        return sumFidelityWeekend;
+    public Double getTotalPriceToFidelityClientOnWeekendDays() {
+        return totalPriceToFidelityClientOnWeekendDays;
     }
 
-    public void setSumFidelityWeekend(Double sumFidelityWeekend) {
-        this.sumFidelityWeekend = sumFidelityWeekend;
+    public void setTotalPriceToFidelityClientOnWeekendDays(Double totalPriceToFidelityClientOnWeekendDays) {
+        this.totalPriceToFidelityClientOnWeekendDays = totalPriceToFidelityClientOnWeekendDays;
     }
 
     @Override
     public String toString() {
         return "Booking{" +
                 "hotel=" + hotel +
-                ", sumRegularWeek=" + sumRegularWeek +
-                ", sumFidelityWeek=" + sumFidelityWeek +
-                ", sumRegularWeekend=" + sumRegularWeekend +
-                ", sumFidelityWeekend=" + sumFidelityWeekend +
+                ", totalPriceToRegularClientOnWeekDays=" + totalPriceToRegularClientOnWeekDays +
+                ", totalPriceToFidelityClientOnyWeekDays=" + totalPriceToFidelityClientOnyWeekDays +
+                ", totalPriceToRegularClientOnWeekendDays=" + totalPriceToRegularClientOnWeekendDays +
+                ", totalPriceToFidelityClientOnWeekendDays=" + totalPriceToFidelityClientOnWeekendDays +
                 '}';
     }
 }

@@ -1,7 +1,6 @@
-package Service;
+package service;
 
-import Service.Interface.HotelService;
-import model.Booking;
+import service.Interface.HotelService;
 import model.Hotel;
 import model.emun.Ranks;
 
@@ -16,8 +15,7 @@ public class HotelServiceImpl implements HotelService {
     public static final String JARDIN_BOTANICO = "Jardim Botânico";
     public static final String MAR_ATLANTICO = "Mar Atlântico";
 
-    @Override
-    public List<Hotel> loadHotel() {
+    public List<Hotel> loadPreConfiguredHotelList() {
 
         List<Hotel> hotelList = new ArrayList<>();
         hotelList.addAll(Arrays.asList(

@@ -1,8 +1,8 @@
 package controller;
 
-import Service.BookingServiceImpl;
-import Service.Interface.BookingService;
-import model.emun.TPClient;
+import service.BookingServiceImpl;
+import service.Interface.BookingService;
+import model.emun.ClientType;
 
 import java.time.LocalDate;
 
@@ -15,7 +15,7 @@ public class BookingController {
     }
 
 
-    public String findBestHotel(TPClient tpClient, LocalDate... dates) {
-        return this.bookingService.findByHotel(tpClient, dates);
+    public String findByHotelWithBetterValueAndRank(ClientType tpClient, LocalDate... dates) {
+        return this.bookingService.findByHotelWithBetterValueAndRank(tpClient, dates);
     }
 }
