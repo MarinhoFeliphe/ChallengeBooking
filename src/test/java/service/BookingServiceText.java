@@ -69,7 +69,7 @@ public class BookingServiceText {
     }
 
     @Test
-    public void checkBestHotelWithBestValueAndRank() {
+    public void checkBestHotelWithBestValue() {
 
         hotelList = hotelService.loadPreConfiguredHotelList();
         bookingService.loadHotelInformationOnBooking(bookingList, hotelList);
