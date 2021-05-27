@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="service.BookingServiceText" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-05-27T19:25:53" hostname="DESKTOP-AQVJT90" time="0.031">
+<testsuite name="service.BookingServiceText" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-05-27T20:10:48" hostname="DESKTOP-AQVJT90" time="0.037">
   <properties/>
-  <testcase name="checkBestHotelWithBestValueAndRank()" classname="service.BookingServiceText" time="0.016"/>
-  <testcase name="checkVerifyThatTheReservationWasLoadedWithInformationFromTheHotel()" classname="service.BookingServiceText" time="0.0"/>
-  <testcase name="checkBestHotelWithValueDuplicateWithBestValueAndRank()" classname="service.BookingServiceText" time="0.001"/>
-  <testcase name="checkCorrectScenarioOfTheBestBooking()" classname="service.BookingServiceText" time="0.012"/>
+  <testcase name="checkVerifyThatTheReservationWasLoadedWithInformationFromTheHotel()" classname="service.BookingServiceText" time="0.017"/>
+  <testcase name="checkBestHotelWithValueDuplicateWithBestValueAndRank()" classname="service.BookingServiceText" time="0.003"/>
+  <testcase name="checkCorrectScenarioOfTheBestBooking()" classname="service.BookingServiceText" time="0.015"/>
+  <testcase name="checkBestHotelWithBestValue()" classname="service.BookingServiceText" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,24 +1,26 @@
 model/Booking.java
  model.Booking
+model/emun/HotelName.java
+ model.emun.HotelName
 service/HotelServiceImpl.java
  service.HotelServiceImpl
-Startup.java
- Startup
 model/emun/Ranks.java
  model.emun.Ranks
-Util/DataUtils.java
- Util.DataUtils
-service/Interface/HotelService.java
- service.Interface.HotelService
+controller/BookingController.java
+ controller.BookingController
 model/emun/ClientType.java
  model.emun.ClientType
 service/Interface/BookingService.java
  service.Interface.BookingService
-model/Hotel.java
- model.Hotel
 model/BestHotelVO.java
  model.BestHotelVO
-controller/BookingController.java
- controller.BookingController
 service/BookingServiceImpl.java
  service.BookingServiceImpl
+Util/DataUtils.java
+ Util.DataUtils
+Startup.java
+ Startup
+service/Interface/HotelService.java
+ service.Interface.HotelService
+model/Hotel.java
+ model.Hotel

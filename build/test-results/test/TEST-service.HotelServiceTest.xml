@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="service.HotelServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-27T19:25:53" hostname="DESKTOP-AQVJT90" time="0.001">
+<testsuite name="service.HotelServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-27T20:10:48" hostname="DESKTOP-AQVJT90" time="0.0">
   <properties/>
-  <testcase name="checkPreConfiguredHotelList()" classname="service.HotelServiceTest" time="0.001"/>
+  <testcase name="checkPreConfiguredHotelList()" classname="service.HotelServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

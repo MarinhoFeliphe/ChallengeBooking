@@ -4,6 +4,7 @@ import model.BestHotelVO;
 import model.Booking;
 import model.Hotel;
 import model.emun.ClientType;
+import model.emun.HotelName;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -17,10 +18,6 @@ public class BookingServiceText {
 
     private static BookingServiceImpl bookingService;
     private static HotelServiceImpl hotelService;
-
-    final String PARQUE_DAS_FLORES = "Parque das flores";
-    final String JARDIN_BOTANICO = "Jardim Botânico";
-    final String MAR_ATLANTICO = "Mar Atlântico";
 
     List<Booking> bookingList = new ArrayList<>();
     List<Hotel> hotelList = new ArrayList<>();
@@ -37,13 +34,13 @@ public class BookingServiceText {
         String bestBooking;
 
         bestBooking = bookingService.findByHotelWithBetterValueAndRank(ClientType.REGULAR, LocalDate.parse("2020-03-16"), LocalDate.parse("2020-03-17"), LocalDate.parse("2020-03-18"));
-        Assertions.assertEquals(PARQUE_DAS_FLORES, bestBooking);
+        Assertions.assertEquals(HotelName.PARQUE_DAS_FLORES.getValue(), bestBooking);
 
         bestBooking = bookingService.findByHotelWithBetterValueAndRank(ClientType.REGULAR, LocalDate.parse("2020-03-20"), LocalDate.parse("2020-03-21"), LocalDate.parse("2020-03-22"));
-        Assertions.assertEquals(JARDIN_BOTANICO, bestBooking);
+        Assertions.assertEquals(HotelName.JARDIN_BOTANICO.getValue(), bestBooking);
 
         bestBooking = bookingService.findByHotelWithBetterValueAndRank(ClientType.FIDELITY, LocalDate.parse("2020-03-26"), LocalDate.parse("2020-03-27"), LocalDate.parse("2020-03-28"));
-        Assertions.assertEquals(MAR_ATLANTICO, bestBooking);
+        Assertions.assertEquals(HotelName.MAR_ATLANTICO.getValue(), bestBooking);
     }
 
     @Test
@@ -81,7 +78,7 @@ public class BookingServiceText {
         });
 
         var minBooking = bookingService.getBestHotelWithMinValue(bookingList);
-        Assertions.assertEquals(MAR_ATLANTICO, minBooking);
+        Assertions.assertEquals(HotelName.MAR_ATLANTICO.getValue(), minBooking);
     }
 
     @Test
@@ -96,7 +93,7 @@ public class BookingServiceText {
         var bestHotelValueMinAndRank =
                 bookingService.getBestHotelWithValueDuplicateWithBestValueAndRank(bestHotelList, bestHotelList.get(1));
 
-        Assertions.assertEquals(MAR_ATLANTICO, bestHotelValueMinAndRank);
+        Assertions.assertEquals(HotelName.MAR_ATLANTICO.getValue(), bestHotelValueMinAndRank);
     }
 
 
