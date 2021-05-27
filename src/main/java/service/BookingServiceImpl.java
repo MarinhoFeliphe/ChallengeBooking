@@ -17,8 +17,8 @@ public class BookingServiceImpl implements BookingService {
     HotelService service = new HotelServiceImpl();
 
     public String findByHotelWithBetterValueAndRank(ClientType clientType, LocalDate... dates) {
-
         List<Booking> bookingList = new ArrayList<>();
+
         List<Hotel> hotelList = service.loadPreConfiguredHotelList();
 
         this.loadHotelInformationOnBooking(bookingList, hotelList);
@@ -43,16 +43,16 @@ public class BookingServiceImpl implements BookingService {
             });
         });
 
-        return this.getBestHotelWithBestValueAndRank(bookingList);
+        return this.getBestHotelWithMinValue(bookingList);
     }
 
-    private void loadHotelInformationOnBooking(List<Booking> bookingList, List<Hotel> hotelList) {
+    protected void loadHotelInformationOnBooking(List<Booking> bookingList, List<Hotel> hotelList) {
         hotelList.forEach(hotel -> {
             bookingList.add(new Booking(hotel, 0d, 0d, 0d, 0d));
         });
     }
 
-    private String getBestHotelWithBestValueAndRank(List<Booking> bookingList) {
+    protected String getBestHotelWithMinValue(List<Booking> bookingList) {
 
         var totalValuesPerHotelList = bookingList.stream()
                 .map(booking -> {
@@ -68,7 +68,7 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
-    private String getBestHotelWithValueDuplicateWithBestValueAndRank(List<BestHotelVO> totalValuesPerHotelList, BestHotelVO bestMinHotelValue) {
+    protected String getBestHotelWithValueDuplicateWithBestValueAndRank(List<BestHotelVO> totalValuesPerHotelList, BestHotelVO bestMinHotelValue) {
 
         var HotelsWithTheSameValueList = totalValuesPerHotelList.stream()
                 .filter(hotelsWithTheSameValueList ->

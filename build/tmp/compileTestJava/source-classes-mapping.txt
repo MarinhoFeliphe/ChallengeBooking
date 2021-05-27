@@ -1,6 +1,6 @@
-util/DateUtilTest.java
- util.DateUtilTest
 service/HotelServiceTest.java
  service.HotelServiceTest
+util/DateUtilTest.java
+ util.DateUtilTest
 service/BookingServiceText.java
  service.BookingServiceText
