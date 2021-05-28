@@ -3,17 +3,19 @@ package model;
 public class Booking {
 
     private Hotel hotel;
-    private Double totalPriceToRegularClientOnWeekDays;
-    private Double totalPriceToFidelityClientOnyWeekDays;
-    private Double totalPriceToRegularClientOnWeekendDays;
-    private Double totalPriceToFidelityClientOnWeekendDays;
+    private Double totalRegularPriceOnWeekdays;
+    private Double totalFidelityPriceOnWeekdays;
+    private Double totalRegularPriceOnWeekend;
+    private Double totalFidelityPriceOnWeekend;
 
-    public Booking(Hotel hotel, Double totalPriceToRegularClientOnWeekDays, Double totalPriceToFidelityClientOnyWeekDays, Double totalPriceToRegularClientOnWeekendDays, Double totalPriceToFidelityClientOnWeekendDays) {
+    public Booking(Hotel hotel, Double totalRegularPriceOnWeekdays, Double totalFidelityPriceOnWeekdays,
+                   Double totalRegularPriceOnWeekend, Double totalFidelityPriceOnWeekend) {
+
         this.hotel = hotel;
-        this.totalPriceToRegularClientOnWeekDays = totalPriceToRegularClientOnWeekDays;
-        this.totalPriceToFidelityClientOnyWeekDays = totalPriceToFidelityClientOnyWeekDays;
-        this.totalPriceToRegularClientOnWeekendDays = totalPriceToRegularClientOnWeekendDays;
-        this.totalPriceToFidelityClientOnWeekendDays = totalPriceToFidelityClientOnWeekendDays;
+        this.totalRegularPriceOnWeekdays = totalRegularPriceOnWeekdays;
+        this.totalFidelityPriceOnWeekdays = totalFidelityPriceOnWeekdays;
+        this.totalRegularPriceOnWeekend = totalRegularPriceOnWeekend;
+        this.totalFidelityPriceOnWeekend = totalFidelityPriceOnWeekend;
     }
 
     public Hotel getHotel() {
@@ -24,46 +26,46 @@ public class Booking {
         this.hotel = hotel;
     }
 
-    public Double getTotalPriceToRegularClientOnWeekDays() {
-        return totalPriceToRegularClientOnWeekDays;
+    public Double getTotalRegularPriceOnWeekdays() {
+        return totalRegularPriceOnWeekdays;
     }
 
-    public void setTotalPriceToRegularClientOnWeekDays(Double totalPriceToRegularClientOnWeekDays) {
-        this.totalPriceToRegularClientOnWeekDays = totalPriceToRegularClientOnWeekDays;
+    public void setTotalRegularPriceOnWeekdays(Double totalRegularPriceOnWeekdays) {
+        this.totalRegularPriceOnWeekdays = totalRegularPriceOnWeekdays;
     }
 
-    public Double getTotalPriceToFidelityClientOnyWeekDays() {
-        return totalPriceToFidelityClientOnyWeekDays;
+    public Double getTotalFidelityPriceOnWeekdays() {
+        return totalFidelityPriceOnWeekdays;
     }
 
-    public void setTotalPriceToFidelityClientOnyWeekDays(Double totalPriceToFidelityClientOnyWeekDays) {
-        this.totalPriceToFidelityClientOnyWeekDays = totalPriceToFidelityClientOnyWeekDays;
+    public void setTotalFidelityPriceOnWeekdays(Double totalFidelityPriceOnWeekdays) {
+        this.totalFidelityPriceOnWeekdays = totalFidelityPriceOnWeekdays;
     }
 
-    public Double getTotalPriceToRegularClientOnWeekendDays() {
-        return totalPriceToRegularClientOnWeekendDays;
+    public Double getTotalRegularPriceOnWeekend() {
+        return totalRegularPriceOnWeekend;
     }
 
-    public void setTotalPriceToRegularClientOnWeekendDays(Double totalPriceToRegularClientOnWeekendDays) {
-        this.totalPriceToRegularClientOnWeekendDays = totalPriceToRegularClientOnWeekendDays;
+    public void setTotalRegularPriceOnWeekend(Double totalRegularPriceOnWeekend) {
+        this.totalRegularPriceOnWeekend = totalRegularPriceOnWeekend;
     }
 
-    public Double getTotalPriceToFidelityClientOnWeekendDays() {
-        return totalPriceToFidelityClientOnWeekendDays;
+    public Double getTotalFidelityPriceOnWeekend() {
+        return totalFidelityPriceOnWeekend;
     }
 
-    public void setTotalPriceToFidelityClientOnWeekendDays(Double totalPriceToFidelityClientOnWeekendDays) {
-        this.totalPriceToFidelityClientOnWeekendDays = totalPriceToFidelityClientOnWeekendDays;
+    public void setTotalFidelityPriceOnWeekend(Double totalFidelityPriceOnWeekend) {
+        this.totalFidelityPriceOnWeekend = totalFidelityPriceOnWeekend;
     }
 
     @Override
     public String toString() {
         return "Booking{" +
                 "hotel=" + hotel +
-                ", totalPriceToRegularClientOnWeekDays=" + totalPriceToRegularClientOnWeekDays +
-                ", totalPriceToFidelityClientOnyWeekDays=" + totalPriceToFidelityClientOnyWeekDays +
-                ", totalPriceToRegularClientOnWeekendDays=" + totalPriceToRegularClientOnWeekendDays +
-                ", totalPriceToFidelityClientOnWeekendDays=" + totalPriceToFidelityClientOnWeekendDays +
+                ", totalRegularPriceOnWeekdays=" + totalRegularPriceOnWeekdays +
+                ", totalFidelityPriceOnWeekdays=" + totalFidelityPriceOnWeekdays +
+                ", totalRegularPriceOnWeekend=" + totalRegularPriceOnWeekend +
+                ", totalFidelityPriceOnWeekend=" + totalFidelityPriceOnWeekend +
                 '}';
     }
 }

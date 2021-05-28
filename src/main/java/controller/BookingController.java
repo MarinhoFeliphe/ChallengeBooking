@@ -14,8 +14,7 @@ public class BookingController {
         this.bookingService = new BookingServiceImpl();
     }
 
-
-    public String findByHotelWithBetterValueAndRank(ClientType tpClient, LocalDate... dates) {
-        return this.bookingService.findByHotelWithBetterValueAndRank(tpClient, dates);
+    public String findByHotelWithBetterValueAndRank(ClientType clientType, LocalDate... dates) {
+        return this.bookingService.findByHotelWithBetterValueAndRank(clientType, dates);
     }
 }

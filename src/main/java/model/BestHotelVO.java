@@ -13,6 +13,14 @@ public class BestHotelVO {
         this.priceToClientTotalDays = priceToClientTotalDays;
     }
 
+    public BestHotelVO(Booking booking) {
+        this.hotel = booking.getHotel();
+        this.priceToClientTotalDays = booking.getTotalRegularPriceOnWeekdays()
+                + booking.getTotalFidelityPriceOnWeekdays()
+                + booking.getTotalRegularPriceOnWeekend()
+                + booking.getTotalFidelityPriceOnWeekend();
+    }
+
     public BestHotelVO() {
     }
 

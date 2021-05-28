@@ -9,7 +9,7 @@ import static java.util.Calendar.*;
 
 public class DataUtils {
 
-    public static boolean getIsWeekend(LocalDate localDate) {
+    public static boolean isWeekend(LocalDate localDate) {
         DayOfWeek d = localDate.getDayOfWeek();
         return d == DayOfWeek.SATURDAY || d == DayOfWeek.SUNDAY;
     }

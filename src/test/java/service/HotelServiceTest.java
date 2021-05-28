@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HotelServiceTest {
@@ -23,28 +22,27 @@ public class HotelServiceTest {
     @Test
     public void checkPreConfiguredHotelList() {
 
-        List<Hotel> hotelList = new ArrayList<>();
-        hotelList = service.loadPreConfiguredHotelList();
+        List<Hotel> hotels = service.loadPreConfiguredHotelList();
 
-        Assertions.assertEquals(HotelName.PARQUE_DAS_FLORES.getValue(), hotelList.get(0).getName());
-        Assertions.assertEquals(Ranks.RANK_THREE, hotelList.get(0).getRank());
-        Assertions.assertEquals(110, hotelList.get(0).getPriceToClientOnRegularWeekDays());
-        Assertions.assertEquals(80, hotelList.get(0).getPriceToClientOnFidelityWeekDays());
-        Assertions.assertEquals(90, hotelList.get(0).getPriceToClientOnRegularWeekendDays());
-        Assertions.assertEquals(80, hotelList.get(0).getPriceToClientOnFidelityWeekendDays());
+        Assertions.assertEquals(HotelName.PARQUE_DAS_FLORES.getValue(), hotels.get(0).getName());
+        Assertions.assertEquals(Ranks.RANK_THREE, hotels.get(0).getRank());
+        Assertions.assertEquals(110, hotels.get(0).getRegularPriceOnWeekdays());
+        Assertions.assertEquals(80, hotels.get(0).getFidelityPriceOnWeekdays());
+        Assertions.assertEquals(90, hotels.get(0).getRegularPriceOnWeekend());
+        Assertions.assertEquals(80, hotels.get(0).getFidelityPriceOnWeekend());
 
-        Assertions.assertEquals(HotelName.JARDIN_BOTANICO.getValue(), hotelList.get(1).getName());
-        Assertions.assertEquals(Ranks.RANK_FOUR, hotelList.get(1).getRank());
-        Assertions.assertEquals(160, hotelList.get(1).getPriceToClientOnRegularWeekDays());
-        Assertions.assertEquals(110, hotelList.get(1).getPriceToClientOnFidelityWeekDays());
-        Assertions.assertEquals(60, hotelList.get(1).getPriceToClientOnRegularWeekendDays());
-        Assertions.assertEquals(50, hotelList.get(1).getPriceToClientOnFidelityWeekendDays());
+        Assertions.assertEquals(HotelName.JARDIN_BOTANICO.getValue(), hotels.get(1).getName());
+        Assertions.assertEquals(Ranks.RANK_FOUR, hotels.get(1).getRank());
+        Assertions.assertEquals(160, hotels.get(1).getRegularPriceOnWeekdays());
+        Assertions.assertEquals(110, hotels.get(1).getFidelityPriceOnWeekdays());
+        Assertions.assertEquals(60, hotels.get(1).getRegularPriceOnWeekend());
+        Assertions.assertEquals(50, hotels.get(1).getFidelityPriceOnWeekend());
 
-        Assertions.assertEquals(HotelName.MAR_ATLANTICO.getValue(), hotelList.get(2).getName());
-        Assertions.assertEquals(Ranks.RANK_FIVE, hotelList.get(2).getRank());
-        Assertions.assertEquals(220, hotelList.get(2).getPriceToClientOnRegularWeekDays());
-        Assertions.assertEquals(100, hotelList.get(2).getPriceToClientOnFidelityWeekDays());
-        Assertions.assertEquals(150, hotelList.get(2).getPriceToClientOnRegularWeekendDays());
-        Assertions.assertEquals(40, hotelList.get(2).getPriceToClientOnFidelityWeekendDays());
+        Assertions.assertEquals(HotelName.MAR_ATLANTICO.getValue(), hotels.get(2).getName());
+        Assertions.assertEquals(Ranks.RANK_FIVE, hotels.get(2).getRank());
+        Assertions.assertEquals(220, hotels.get(2).getRegularPriceOnWeekdays());
+        Assertions.assertEquals(100, hotels.get(2).getFidelityPriceOnWeekdays());
+        Assertions.assertEquals(150, hotels.get(2).getRegularPriceOnWeekend());
+        Assertions.assertEquals(40, hotels.get(2).getFidelityPriceOnWeekend());
     }
 }

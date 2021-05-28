@@ -11,60 +11,57 @@ import model.emun.ClientType;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class BookingServiceImpl implements BookingService {
 
     HotelService service = new HotelServiceImpl();
 
     public String findByHotelWithBetterValueAndRank(ClientType clientType, LocalDate... dates) {
-        List<Booking> bookingList = new ArrayList<>();
+        List<Booking> bookings = new ArrayList<>();
 
-        List<Hotel> hotelList = service.loadPreConfiguredHotelList();
+        List<Hotel> hotels = service.loadPreConfiguredHotelList();
 
-        this.loadHotelInformationOnBooking(bookingList, hotelList);
+        this.loadHotelInformationOnBooking(bookings, hotels);
 
         Arrays.asList(dates).forEach(dateBooking -> {
 
-            bookingList.forEach(booking -> {
-                boolean isWeekend = DataUtils.getIsWeekend(dateBooking);
-                if (isWeekend) {
-                    if (clientType.equals(ClientType.REGULAR)) {
-                        booking.setTotalPriceToRegularClientOnWeekendDays(Double.sum(booking.getTotalPriceToRegularClientOnWeekendDays(), booking.getHotel().getPriceToClientOnRegularWeekendDays()));
+            bookings.forEach(booking -> {
+                if (DataUtils.isWeekend(dateBooking)) {
+                    if (ClientType.REGULAR.equals(clientType)) {
+                        booking.setTotalRegularPriceOnWeekend(Double.sum(booking.getTotalRegularPriceOnWeekend(), booking.getHotel().getRegularPriceOnWeekend()));
                     } else {
-                        booking.setTotalPriceToFidelityClientOnWeekendDays(Double.sum(booking.getTotalPriceToFidelityClientOnWeekendDays(), booking.getHotel().getPriceToClientOnFidelityWeekendDays()));
+                        booking.setTotalFidelityPriceOnWeekend(Double.sum(booking.getTotalFidelityPriceOnWeekend(), booking.getHotel().getFidelityPriceOnWeekend()));
                     }
                 } else {
-                    if (clientType.equals(ClientType.REGULAR)) {
-                        booking.setTotalPriceToRegularClientOnWeekDays(Double.sum(booking.getTotalPriceToRegularClientOnWeekDays(), booking.getHotel().getPriceToClientOnRegularWeekDays()));
+                    if (ClientType.REGULAR.equals(clientType)) {
+                        booking.setTotalRegularPriceOnWeekdays(Double.sum(booking.getTotalRegularPriceOnWeekdays(), booking.getHotel().getRegularPriceOnWeekdays()));
                     } else {
-                        booking.setTotalPriceToFidelityClientOnyWeekDays(Double.sum(booking.getTotalPriceToFidelityClientOnyWeekDays(), booking.getHotel().getPriceToClientOnFidelityWeekDays()));
+                        booking.setTotalFidelityPriceOnWeekdays(Double.sum(booking.getTotalFidelityPriceOnWeekdays(), booking.getHotel().getFidelityPriceOnWeekdays()));
                     }
                 }
             });
         });
 
-        return this.getBestHotelWithMinValue(bookingList);
+        return this.getBestHotelWithMinValue(bookings);
     }
 
-    protected void loadHotelInformationOnBooking(List<Booking> bookingList, List<Hotel> hotelList) {
-        hotelList.forEach(hotel -> {
-            bookingList.add(new Booking(hotel, 0d, 0d, 0d, 0d));
+    protected void loadHotelInformationOnBooking(List<Booking> bookings, List<Hotel> hotels) {
+        hotels.forEach(hotel -> {
+            bookings.add(new Booking(hotel, 0d, 0d, 0d, 0d));
         });
     }
 
-    protected String getBestHotelWithMinValue(List<Booking> bookingList) {
+    protected String getBestHotelWithMinValue(List<Booking> bookings) {
 
-        var totalValuesPerHotelList = bookingList.stream()
-                .map(booking -> {
-                    return new BestHotelVO(booking.getHotel(), booking.getTotalPriceToRegularClientOnWeekDays() + booking.getTotalPriceToFidelityClientOnyWeekDays()
-                            + booking.getTotalPriceToRegularClientOnWeekendDays() + booking.getTotalPriceToFidelityClientOnWeekendDays());
-                })
+        var totalValuesPerHotels = bookings.stream()
+                .map(BestHotelVO::new)
                 .collect(Collectors.toList());
 
-        var bestMinHotelValue = totalValuesPerHotelList.stream()
+        var lowestHotelPrice = totalValuesPerHotels.stream()
                 .min(Comparator.comparing(BestHotelVO::getPriceToClientTotalDays)).get();
 
-        return getBestHotelWithValueDuplicateWithBestValueAndRank(totalValuesPerHotelList, bestMinHotelValue);
+        return getBestHotelWithValueDuplicateWithBestValueAndRank(totalValuesPerHotels, lowestHotelPrice);
 
     }
 
@@ -76,7 +73,7 @@ public class BookingServiceImpl implements BookingService {
                                 hotelsWithTheSameValueList.getPriceToClientTotalDays().equals(bestMinHotelValue.getPriceToClientTotalDays()))
                 .collect(Collectors.toList());
 
-        if (HotelsWithTheSameValueList != null && !HotelsWithTheSameValueList.isEmpty()) {
+        if (!HotelsWithTheSameValueList.isEmpty()) {
             HotelsWithTheSameValueList.add(bestMinHotelValue);
             var highestRankedHotel = HotelsWithTheSameValueList.stream()
                     .max(Comparator.comparing(x -> x.getHotel().getRank()))
